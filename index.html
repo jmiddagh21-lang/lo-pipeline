@@ -718,7 +718,7 @@ function unlockApp(){document.getElementById("pin-screen").style.display="none";
 load().then(()=>{clearTimeout(_loadTimeout);nav("dashboard");}).catch(()=>{clearTimeout(_loadTimeout);nav("dashboard");});}
 function lockApp(){pinEntry="";confirmPin="";uDots();document.getElementById("pin-error").textContent="";document.getElementById("pin-screen").style.display="flex";document.getElementById("app").style.display="none";}
 function resetPin(){if(confirm("Delete ALL data and reset PIN?')")){localStorage.clear();location.reload();}}
-const PAGE_TITLES={dashboard:"Dashboard",contacts:"Contacts",prospecting:"Prospecting Pipeline",partners:"Partners",loans:"Leads Pipeline",tasks:"Tasks & Meetings",openhouses:"Open Houses",activity:"Activity Log"};
+const PAGE_TITLES={dashboard:"Dashboard",contacts:"Contacts",prospecting:"Prospecting Pipeline",partners:"Partners",loans:"Leads Pipeline",tasks:"Tasks & Meetings",openhouses:"Open Houses",activity:"Activity Log",fsbos:"FSBO Pipeline"};
 function nav(tab){currentTab=tab;document.querySelectorAll(".nav-item").forEach(el=>el.classList.remove("active"));if(document.getElementById("nav-"+tab))document.getElementById("nav-"+tab).classList.add("active");
   // Update bottom nav
   document.querySelectorAll(".bnav-item").forEach(el=>el.classList.remove("active"));
