@@ -755,6 +755,8 @@ function rDash(el){
   }).length;
   const leadsMonth=db.loanDeals.filter(function(d){
     const dt=d.dateReceived||d.createdAt||t;
+  const refsAskedToday=db.activities.filter(function(a){return a.askedReferral&&a.date===t;}).length;
+  const refsAskedMonth=db.activities.filter(function(a){return a.askedReferral&&(a.date||'').slice(0,7)===t.slice(0,7);}).length;
     return dt.slice(0,7)===t.slice(0,7)&&!d.dormant;
   }).length;
   const meetings=db.tasks.filter(x=>!x.completed&&x.type==="Meeting"&&x.dueDate>=t).sort((a,b)=>a.dueDate.localeCompare(b.dueDate)).slice(0,5);
